@@ -1,0 +1,98 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QRH - Quick Reference Handbook in LaTeX
+% This is the package file, you just includes this as
+% \usepackage{qrh} and follow the README instructions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LICENSE: GNU Lesser General Public License 3
+% Repository: http://
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{qrh}[2015/04/10 Quick Reference Handbook package]
+
+\RequirePackage[a5paper, margin=3 mm]{geometry}
+\RequirePackage{multirow}
+\RequirePackage{datetime}
+\RequirePackage[table]{xcolor}
+\RequirePackage{changepage}   % adjustwidth
+
+
+% FONT FAMILY SELECTION
+\RequirePackage[T1]{fontenc}
+\RequirePackage[ttdefault=true]{AnonymousPro}
+\renewcommand*\familydefault{\ttdefault}
+\ttfamily
+
+% HEADING
+\newcommand{\headingcl}[4]{
+	\vspace*{0.3cm}
+    \begin{center}
+
+        \begin{tabular}{|p{1.3cm}|p{6.5cm}|p{1.7cm}|p{1.5cm}|}
+          \hline
+          
+          \multicolumn{1}{|c|}{\multirow{2}{*}{\large #1}} & 
+          \multicolumn{1}{|c|}{\multirow{2}{*}{\LARGE #2}} & 
+          REV. #3 &
+          \multicolumn{1}{|c|}{\multirow{2}{*}{\LARGE #4.\ifnum\thepage<10 0\fi\thepage}}
+          \\
+          & & \small\mmddyyyydate\today & \\
+          
+          \hline
+        \end{tabular}
+	\end{center}
+    \vspace*{0.15cm}
+    
+}
+
+% BODY
+\newcommand{\bodycl}[2] {
+
+  \begin{center}
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|p{12cm}|}
+    	\hline
+    	\multicolumn{1}{|c|}{
+        	\cellcolor{black!100}\textcolor{white}{\Large #1}
+        } \\ \hline
+       
+        #2\\
+        
+        \hline
+    \end{tabular}
+ 
+  \end{center}
+
+}
+
+% SINGLE ITEM
+\newcommand{\itemcl}[2] {
+#1 \dotfill ~#2 \\
+}
+
+\newcommand{\subitemcl}[2] {
+~~\itemcl{#1}{#2}
+}
+
+\newcommand{\itemcond}[2] {
+\vspace*{0.02cm}
+\textbf{#1}: \\
+#2 
+\vspace*{0.05cm}
+}
+
+\newcommand{\spacecl} {
+\vspace*{0.05cm}
+}
+
+\newcommand{\symalert} {
+\vfill
+\begin{center}
+	\textbf{This document must not be used in real aviation.}
+\end{center}
+}
+
+
+\endinput
+
