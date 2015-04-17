@@ -16,6 +16,7 @@
 \RequirePackage{datetime}
 \RequirePackage[table]{xcolor}
 \RequirePackage{changepage}   % adjustwidth
+\RequirePackage{graphicx}     % for includegraphics
 
 
 % FONT FAMILY SELECTION
@@ -24,18 +25,37 @@
 \renewcommand*\familydefault{\ttdefault}
 \ttfamily
 
+% FIRST PAGE
+\newcommand{\QRHfirstpage}[4]{
+  \newcommand{\QRHAirplaneName}{#2}
+  \newcommand{\QRHAirplaneShortName}{#3}
+  \newcommand{\QRHRevisionNumber}{#4}
+  
+  \begin{center}
+  \vspace*{3cm}
+  \includegraphics[width=250px]{#1} \\
+  \vspace{1cm}
+  {\huge \QRHAirplaneName} \\
+  \vspace{0.5cm}
+  {\Huge Quick Reference Handbook} \\
+  \vspace{1cm}
+  Revision: \QRHRevisionNumber \\
+  Date: \today
+  \end{center}
+}
+
 % HEADING
-\newcommand{\headingcl}[4]{
+\newcommand{\QRHheading}[2]{
 	\vspace*{0.3cm}
     \begin{center}
 
         \begin{tabular}{|p{1.3cm}|p{6.5cm}|p{1.7cm}|p{1.5cm}|}
           \hline
           
-          \multicolumn{1}{|c|}{\multirow{2}{*}{\large #1}} & 
-          \multicolumn{1}{|c|}{\multirow{2}{*}{\LARGE #2}} & 
-          REV. #3 &
-          \multicolumn{1}{|c|}{\multirow{2}{*}{\LARGE #4.\ifnum\thepage<10 0\fi\thepage}}
+          \multicolumn{1}{|c|}{\multirow{2}{*}{\large \QRHAirplaneShortName}} & 
+          \multicolumn{1}{|c|}{\multirow{2}{*}{\LARGE #1}} & 
+          REV. \QRHRevisionNumber &
+          \multicolumn{1}{|c|}{\multirow{2}{*}{\LARGE #2.\ifnum\thepage<10 0\fi\thepage}}
           \\
           & & \small\mmddyyyydate\today & \\
           
@@ -47,7 +67,7 @@
 }
 
 % BODY
-\newcommand{\bodycl}[2] {
+\newcommand{\QRHbody}[2] {
 
   \begin{center}
 	\renewcommand{\arraystretch}{1.5}
@@ -67,26 +87,26 @@
 }
 
 % SINGLE ITEM
-\newcommand{\itemcl}[2] {
+\newcommand{\QRHitem}[2] {
 #1 \dotfill ~#2 \\
 }
 
-\newcommand{\subitemcl}[2] {
-~~\itemcl{#1}{#2}
+\newcommand{\QRHsubitem}[2] {
+~~\QRHitem{#1}{#2}
 }
 
-\newcommand{\itemcond}[2] {
+\newcommand{\QRHitemcond}[2] {
 \vspace*{0.02cm}
 \textbf{#1}: \\
 #2 
 \vspace*{0.05cm}
 }
 
-\newcommand{\spacecl} {
+\newcommand{\QRHspace} {
 \vspace*{0.05cm}
 }
 
-\newcommand{\symalert} {
+\newcommand{\QRHsymalert} {
 \vfill
 \begin{center}
 	\textbf{This document must not be used in real aviation.}
