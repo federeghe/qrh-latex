@@ -1,11 +1,12 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % QRH - Quick Reference Handbook in LaTeX
 % This is the package file, you just includes this as
 % \usepackage{qrh} and follow the README instructions
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % LICENSE: GNU Lesser General Public License 3
-% Repository: http://
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Repository: https://github.com/federeghe/qrh-latex
+% Author: Federico Reghenzani <federico §DOT§ dev §AT§ reghe §DOT§ net>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
@@ -14,16 +15,33 @@
 \RequirePackage[a5paper, margin=3 mm]{geometry}
 \RequirePackage{multirow}
 \RequirePackage{datetime}
+\RequirePackage{shorttoc}	  % for TOCs
 \RequirePackage[table]{xcolor}
 \RequirePackage{changepage}   % adjustwidth
 \RequirePackage{graphicx}     % for includegraphics
 
+\RequirePackage{qrhhelper}
 
 % FONT FAMILY SELECTION
 \RequirePackage[T1]{fontenc}
 \RequirePackage[ttdefault=true]{AnonymousPro}
 \renewcommand*\familydefault{\ttdefault}
 \ttfamily
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Command to create the main TOC
+%
+\newcommand{\QRHtoc} {
+	\shorttableofcontents{TEST}{0}
+    \makeatletter
+      \newwrite\tf@toc
+      \immediate\openout\tf@toc\jobname.toc\relax
+	\makeatother
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 % FIRST PAGE
 \newcommand{\QRHfirstpage}[4]{
@@ -44,18 +62,33 @@
   \end{center}
 }
 
+\newcounter{PartCount@QRH}	% This count the progress of parts to print out
+							% in headings
+\newcommand{\PartName@QRH}{UNKNOWN PART}	% Name of current part
+
+
+% NEW BIG PART
+\newcommand{\QRHpart}[1]{
+	\setcounter{page}{1}
+	\invisiblepart@QRH{#1}
+    \renewcommand{\PartName@QRH}{#1}
+    \stepcounter{PartCount@QRH}
+}
+
+
 % HEADING
-\newcommand{\QRHheading}[2]{
+\newcommand{\QRHheading}{
 	\vspace*{0.3cm}
+    
     \begin{center}
 
         \begin{tabular}{|p{1.3cm}|p{6.5cm}|p{1.7cm}|p{1.5cm}|}
           \hline
           
           \multicolumn{1}{|c|}{\multirow{2}{*}{\large \QRHAirplaneShortName}} & 
-          \multicolumn{1}{|c|}{\multirow{2}{*}{\LARGE #1}} & 
+          \multicolumn{1}{|c|}{\multirow{2}{*}{\LARGE \PartName@QRH}} & 
           REV. \QRHRevisionNumber &
-          \multicolumn{1}{|c|}{\multirow{2}{*}{\LARGE #2.\ifnum\thepage<10 0\fi\thepage}}
+          \multicolumn{1}{|c|}{\multirow{2}{*}{\LARGE \arabic{PartCount@QRH}.\ifnum\thepage<10 0\fi\thepage}}
           \\
           & & \small\mmddyyyydate\today & \\
           
@@ -68,6 +101,9 @@
 
 % BODY
 \newcommand{\QRHbody}[2] {
+
+  \invisiblesection@QRH{#1}
+
 
   \begin{center}
 	\renewcommand{\arraystretch}{1.5}
@@ -115,4 +151,4 @@
 
 
 \endinput
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

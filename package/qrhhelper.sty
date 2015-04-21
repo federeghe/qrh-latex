@@ -1,0 +1,37 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QRH - Quick Reference Handbook in LaTeX
+% This is the package file, you just includes this as
+% \usepackage{qrh} and follow the README instructions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LICENSE: GNU Lesser General Public License 3
+% Repository: https://github.com/federeghe/qrh-latex
+% Author: Federico Reghenzani <federico §DOT§ dev §AT§ reghe §DOT§ net>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{qrhhelper}[2015/04/10 Quick Reference Handbook package helper 
+- DO NOT USE THIS - Use qrh package!]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% http://tex.stackexchange.com/a/68296
+% A new command to create invisible section (used
+% to create the TOC.
+%
+
+\newcommand\invisiblepart@QRH[1]{
+	\refstepcounter{part}
+	\addcontentsline{toc}{part}{\protect\numberline{\thepart}#1}
+	\sectionmark{#1}
+}
+
+\newcommand\invisiblesection@QRH[1]{
+	\refstepcounter{section}
+	\addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}
+	\sectionmark{#1}
+}
+
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
