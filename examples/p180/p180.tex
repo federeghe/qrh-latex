@@ -1,0 +1,417 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{qrh}
+
+\begin{document}
+
+\QRHfirstpage{p180.png}{P180 Avanti II}{P180 II}{03}
+
+\QRHsymalert
+\newpage
+
+\QRHtoc
+\QRHsymalert
+\newpage
+
+\QRHpart{NORMAL CHECKLIST}
+
+\QRHheading
+
+\QRHbody{COLD AND DARK}{
+
+  \QRHitem{PARK BRAKE}{ON}
+  \QRHitem{BATTERY}{ON}
+  \QRHitem{BATTERY VOLTAGE}{CHECK}
+  \QRHitem{AVIONICS}{ON}
+  \QRHitem{ANNUNCIATORS TEST}{PRESS}
+  \QRHitem{NAV LIGHT}{ON}
+  \QRHitem{FUEL}{CALCULATED \& REFUELED \& CHECKED}
+  \QRHspace
+  \QRHitem{ATC CLEARENCE FOR FLIGHT PLAN}{OBTAINED}
+  \QRHspace
+  \QRHitem{FMC}{SET}
+  \QRHitem{RADIOS}{SET}
+  \QRHitem{CABIN PRESSURE}{SET}
+  \QRHitem{V-SPEEDS}{CALCULATED}
+
+}
+\QRHsymalert
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\QRHheading
+
+\QRHbody{ENGINE STARTUP}{
+
+  \QRHitem{DOORS}{CLOSED}
+  \QRHitem{FASTEN BELTS SIGNS}{ON}
+  \QRHitem{ATC CLEARENCE FOR ENGINE STARTUP}{OBTAINED}
+  \QRHitem{THROTTLE}{IDLE}
+  \QRHitem{BEACON LIGHT}{ON}
+  \QRHitem{FUEL PUMP 1 \& 2}{ON}
+
+
+  \QRHitemcond{For each engine first eng.2 then eng.1}
+  {
+    \QRHsubitem{ENGINE AREA}{CLEAR}
+    \QRHsubitem{FUEL VALVE}{ON}
+    \QRHsubitem{ENGINE IGNITION}{START (hold 10 s.)}
+    \QRHsubitem{ENGINE PARAMETERS}{CHECK \& WAIT STABILIZED}
+    \QRHsubitem{ENGINE GENERATOR}{ON}
+  }
+
+  \QRHitem{IGNITER 1 \& 2}{ON}
+  \QRHitem{PROP SYNC}{ON}
+  \QRHitem{BLEED AIR}{BOTH}
+
+}
+\QRHsymalert
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\QRHheading
+
+\QRHbody{PRE-TAXI}{
+
+  \QRHitem{INVERTER 1 \& 2}{ON}
+  \QRHspace
+  \QRHitem{WINDOW HEAT}{ON}
+  \QRHitem{PITOT HEAT}{ON}
+  \QRHitem{ENGINE/WING HEAT}{AS REQ.}
+  \QRHspace
+  \QRHitem{AUTOPILOT}{SET}
+}
+
+
+\QRHbody{TAXI}{
+
+  \QRHitem{TAXI LIGHT}{AS REQ.}
+  \QRHspace
+  \QRHitem{PARK BRAKE}{OFF}
+  \QRHitem{GROUND SPEED}{BELOW 20 kt}
+
+  \QRHitemcond{During taxi}
+  {
+    \QRHsubitem{BARO}{SET}
+    \QRHsubitem{FLAPS}{MID}
+    \QRHsubitem{TAKEOFF TRIM}{SET}
+    \QRHsubitem{AUTOBRAKES}{RTO}
+    \QRHsubitem{HYD PRESSURE}{CHECK}
+  }
+}
+
+\QRHsymalert
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\QRHheading
+
+\QRHbody{PRE-TAKEOFF}{
+  \QRHitem{ANNUNCIATORS}{NO ERRORS}
+  \QRHitem{FLAPS}{CHECK}
+  
+  \QRHitemcond{During lineup}
+  {
+    \QRHsubitem{LANDING LIGHTS}{ON}
+    \QRHsubitem{STROBE LIGHTS}{ON}
+    \QRHsubitem{TRASPONDER}{TA/RA}
+  }
+  
+  \QRHitem{ATC CLEARENCE FOR TAKEOFF}{OBTAINED}
+}
+
+\QRHbody{AFTER-TAKEOFF}{
+  \QRHitem{GEAR}{UP/NO LIGHTS}
+  \QRHitem{TAXI LIGHTS}{OFF}
+  
+  \QRHitemcond{@ 150kt}
+  {
+    \QRHsubitem{FLAPS}{UP}
+  }
+}
+
+\QRHsymalert
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\QRHheading
+
+\QRHbody{CLIMB} {
+
+  \QRHitemcond{@ 10.000ft / FL100}
+  {
+    \QRHsubitem{PRESSURIZATION}{CHECK INCREASING}
+    \QRHsubitem{IGNITER 1 \& 2}{OFF}
+    \QRHsubitem{LANDING LIGHTS}{OFF}
+    \QRHsubitem{FASTEN BELTS}{OFF}
+  }
+  
+  \QRHitemcond{@ 15.000ft / FL150}
+  {
+    \QRHsubitem{FUEL PUMP 1 \& 2}{OFF}
+  }
+}
+
+\QRHbody{CRUISE} {
+	\QRHitem{CONDITION LEVERS}{SET}
+    \QRHitem{AUTOPILOT}{CHECK}
+	\QRHitem{FUEL}{CHECK}
+}
+
+\QRHbody{FLIGHT LEVEL CHANGE} {
+	\QRHitem{CABINE PRESSURE}{SET}
+	\QRHitem{CONDITION LEVERS}{SET}
+    \QRHitem{AUTOPILOT}{SET}
+}
+
+
+\QRHsymalert
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\QRHheading
+
+\QRHbody{DESCENT} {
+  \QRHitem{ENGINE HEAT}{ON}
+  \QRHitem{WING HEAT}{AS REQ.}
+  \QRHitem{LANDING WEIGHT}{CALCULATED}
+  \QRHitem{DECISION HEIGHT}{SET}
+  
+  \QRHitemcond{@ 10.000ft / FL100}
+  {
+    \QRHsubitem{IGNITER 1 \& 2}{ON}
+    \QRHsubitem{FUEL PUMP 1 \& 2}{ON}
+    \QRHsubitem{AUTOBRAKE}{SET}
+    \QRHsubitem{LANDING LIGHTS}{ON}
+    \QRHsubitem{FASTEN BELTS}{ON}
+  }
+  
+  \QRHitemcond{@ 5.000ft / FL050}
+  {
+    \QRHsubitem{ENGINE HEAT}{OFF}
+    \QRHsubitem{WING HEAT}{AS REQ.}
+    \QRHsubitem{CONDITION LEVERS}{ON}
+  }
+  
+  \QRHitemcond{@ 2.000ft}
+  {
+    \QRHsubitem{LANDING GEAR}{DOWN}
+    \QRHsubitem{FLAPS}{CHECK AS REQ.}
+    \QRHsubitem{TAXI LIGHT}{AS REQ.}
+  }
+}
+
+\QRHsymalert
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\QRHheading
+
+\QRHbody{LANDING} {
+  \QRHitem{LANDING GEAR}{DOWN 3 GREEN}
+  \QRHitem{FLAPS}{DOWN}
+  \QRHitem{ATC CLEARENCE FOR LANDING}{OBTAINED}
+}
+
+\QRHbody{AFTER LANDING} {
+  \QRHitem{STROBE LIGHTS}{OFF}
+  \QRHitem{TRASPONDER}{STBY/AS REQ.}
+  \QRHitem{FLAPS}{UP}
+  \QRHitem{WING HEAT}{OFF}
+  \QRHitem{BLEED AIR}{OFF}
+  \QRHitem{IGNITER 1 \& 2}{OFF}
+  \QRHitem{AUTOPILOT}{OFF}
+}
+
+
+\QRHsymalert
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\QRHheading
+
+\QRHbody{SHUTDOWN} {
+  \QRHitem{PARK BRAKE}{ON}
+  \QRHitem{LANDING \& TAXI LIGHT}{OFF}
+  \QRHitem{PITOT HEAT}{OFF}
+  \QRHitem{WINDOW HEAT}{OFF}
+  \QRHitem{INVERTER 1 \& 2}{OFF}
+  \QRHitem{PROP SYNC}{OFF}
+  
+  \QRHitemcond{For each engine first eng.1 then eng.2}
+  {
+    \QRHsubitem{ENGINE GENERATOR}{OFF}
+    \QRHsubitem{FUEL VALVE}{OFF}
+    \QRHsubitem{ENGINE IGNITION}{OFF}
+  }
+  
+  \QRHsubitem{FUEL PUMP 1 \& 2}{OFF}
+  \QRHsubitem{BEACON LIGHT}{OFF}
+  \QRHsubitem{NAV LIGHT}{AS REQ.}
+  \QRHsubitem{AVIONICS}{OFF}
+  \QRHsubitem{BATTERY}{AS REQ.}
+  
+}
+
+
+\QRHsymalert
+\newpage
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\QRHpart{ABNORMAL CHECKLIST}
+
+
+
+
+
+\QRHheading
+
+\QRHbody{HIGH SPEED LANDING} {
+  \QRHitem{BRACE}{ADVISED}
+  \QRHitem{RUDDER}{USE WITH CARE}
+  \QRHitem{REVERSE}{FULL JUST BEFORE TOUCHDOWN}
+  \QRHitem{BRAKES}{GENTLY WHEN HIGH SPEED}
+}
+
+\QRHbody{OVERWEIGHT LANDING} {
+
+}
+
+
+
+
+
+\QRHsymalert
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\QRHpart{EMERG CHECKLIST}
+
+
+\QRHheading
+
+\QRHbody{EMERG - ENGINE FIRE IN FLIGHT} {
+
+  \QRHitemcond{If climbing}
+  {
+    \QRHsubitem{LEVEL OFF}{DONE}
+  }
+  \QRHitem{ATC}{ADVISED}
+  
+  \QRHitemcond{On affected engine}
+  {
+    \QRHsubitem{THROTTLE}{IDLE}
+    \QRHsubitem{CONDITION LEVER}{FEATHERED}
+    \QRHsubitem{FUEL VALVE}{OFF}
+    \QRHsubitem{IGNITION}{OFF}
+    \QRHsubitem{IGNITER}{OFF}    
+  }
+  
+  \QRHitemcond{If tank leak suspected}
+  {
+  	\QRHsubitem{FUEL PUMP (same side engine affected)}{OFF}
+  }
+
+  \QRHitemcond{If fire warning light still on}
+  {
+  	\QRHsubitem{AFFECTED ENG FIRE BUTTON}{PRESS}
+  }
+
+  
+  \QRHitem{BLEED AIR}{ENG NOT AFFECTED}
+  \QRHitem{PROP SYNC}{OFF}
+  \QRHitemcond{On affected engine}
+  {
+    \QRHsubitem{IGNITER}{ON}
+  }
+
+  \QRHitem{LAND ASAP}{LAND ASAP}
+
+}
+
+\QRHsymalert
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\QRHheading
+
+\QRHbody{EMERG - ENGINE FIRE ON GROUND} {
+  \QRHitem{ATC}{ADVISED}
+  
+  \QRHitemcond{If on runway and situation is safe}
+  {
+  	\QRHsubitem{LEAVE RUNWAY}{DONE}
+  }
+  
+  \QRHitem{THROTTLE}{IDLE}
+  \QRHitem{FUEL VALVE 1 \& 2}{OFF}
+  \QRHitem{IGNITION 1 \& 2}{OFF}
+  \QRHitem{IGNITER 1 \& 2}{OFF}
+  \QRHitem{BLEED AIR}{OFF}
+
+  \QRHitemcond{If fire warning light still on}
+  {
+  	\QRHsubitem{AFFECTED ENG FIRE BUTTON}{PRESS}
+  }
+
+  \QRHitem{EVACUATION}{EVALUATE}
+}
+
+\QRHsymalert
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\QRHheading
+
+\QRHbody{EMERG - ENGINE FAIL IN FLIGHT} {
+  \QRHitemcond{If climbing}
+  {
+    \QRHsubitem{LEVEL OFF}{DONE}
+    \QRHitem{ATC}{ADVISED}
+  }
+  \QRHitemcond{On affected engine}
+  {
+    \QRHsubitem{THROTTLE}{IDLE}
+    \QRHsubitem{CONDITION LEVER}{FEATHERED}    
+  }
+  
+  \QRHitem{IGNITER 1 \& 2}{ON}
+  \QRHitem{BLEED AIR}{ENG NOT AFFECTED}
+    \QRHitemcond{If no damage suspected, on engine affected, repeat 3 
+times with interval pauses of 30 s.} {
+    \QRHsubitem{FUEL VALVE}{OFF then ON}
+    \QRHsubitem{IGNITION}{OFF then START (hold 15 s.)}
+  }
+  
+  \QRHitemcond{If no relight}
+  {
+    \QRHsubitem{FUEL VALVE \& IGNITION \& IGNITER}{OFF (affected eng)}
+    \QRHsubitem{PROP SYNC}{OFF}
+    \QRHsubitem{LAND ASAP}{LAND ASAP}
+
+  }
+  \QRHitemcond{If relight}
+  {
+    \QRHsubitem{CONDITION LEVER}{ADJUST WITH CARE}
+  	\QRHsubitem{THROTTLE}{ADJUST WITH CARE}
+    \QRHsubitem{BLEED AIR}{BOTH}
+  }
+  
+}
+
+\QRHsymalert
+\newpage
+
+\end{document}

@@ -24,6 +24,7 @@ CP = cp
 RM = rm
 MKDIR = mkdir
 
+MKTEXLSR = mktexlsr
 
 STYFILES = qrh.sty qrhhelper.sty
 
@@ -36,7 +37,8 @@ stycheck: $(STYFILES)
 
 install: stycheck
 	$(CP) -r build/$(PACKAGE) $(DESTINATION)
-	
+	$(MKTEXLSR)
+
 uninstall:
 	$(RM) -r $(DESTINATION)
 
