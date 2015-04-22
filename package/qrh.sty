@@ -9,6 +9,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 \ProvidesPackage{qrh}[2015/04/10 Quick Reference Handbook package]
 
@@ -19,7 +21,6 @@
 \RequirePackage[table]{xcolor}
 \RequirePackage{changepage}   % adjustwidth
 \RequirePackage{graphicx}     % for includegraphics
-
 \RequirePackage{qrhhelper}
 
 % FONT FAMILY SELECTION
@@ -34,7 +35,7 @@
 % Command to create the main TOC
 %
 \newcommand{\QRHtoc} {
-	\shorttableofcontents{TEST}{0}
+	\shorttableofcontents{Summary}{0}
     \makeatletter
       \newwrite\tf@toc
       \immediate\openout\tf@toc\jobname.toc\relax
@@ -70,9 +71,11 @@
 % NEW BIG PART
 \newcommand{\QRHpart}[1]{
 	\setcounter{page}{1}
-	\invisiblepart@QRH{#1}
     \renewcommand{\PartName@QRH}{#1}
     \stepcounter{PartCount@QRH}
+
+	% add part for TOC
+	\invisiblepart@QRH{#1}{\arabic{PartCount@QRH}}
 }
 
 
@@ -151,4 +154,5 @@
 
 
 \endinput
+    
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
