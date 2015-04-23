@@ -18,7 +18,7 @@
 
 PACKAGE = qrh
 
-DESTINATION = /usr/share/texmf-dist/tex/latex/$(PACKAGE)
+DESTINATION = /usr/share/texmf-dist/tex/latex
 
 CP = cp
 RM = rm
@@ -28,16 +28,18 @@ MKTEXLSR = mktexlsr
 
 STYFILES = qrh.sty qrhhelper.sty
 
+LATEXCOMPILER = pdflatex
+
 all: stycheck
-	$(MKDIR) build
-	$(MKDIR) build/$(PACKAGE)
+	$(MKDIR) -p build
+	$(MKDIR) -p build/$(PACKAGE)
 	$(CP) $(STYFILES) build/$(PACKAGE)
 
 stycheck: $(STYFILES)
 
 install: stycheck
 	$(CP) -r build/$(PACKAGE) $(DESTINATION)
-	$(MKTEXLSR)
+	$(MKTEXLSR) $(DESTINATION)/$(PACKAGE)
 
 uninstall:
 	$(RM) -r $(DESTINATION)
@@ -45,9 +47,12 @@ uninstall:
 clean:
 	$(RM) -r build
 	
-test:
-	echo "Not yet implemented".
+test:	testp180
 
 archpackage:
 	echo "Not yet implemented".
 	
+
+testp180:
+	cd ../examples/p180 && \
+	$(LATEXCOMPILER) p180.tex > compilation.log

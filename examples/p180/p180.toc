@@ -1,0 +1,21 @@
+\contentsline {part}{\numberline {I}NORMAL CHECKLIST}{I}
+\contentsline {section}{\numberline {1}COLD AND DARK}{1}
+\contentsline {section}{\numberline {2}ENGINE STARTUP}{2}
+\contentsline {section}{\numberline {3}PRE-TAXI}{3}
+\contentsline {section}{\numberline {4}TAXI}{3}
+\contentsline {section}{\numberline {5}PRE-TAKEOFF}{4}
+\contentsline {section}{\numberline {6}AFTER-TAKEOFF}{4}
+\contentsline {section}{\numberline {7}CLIMB}{5}
+\contentsline {section}{\numberline {8}CRUISE}{5}
+\contentsline {section}{\numberline {9}FLIGHT LEVEL CHANGE}{5}
+\contentsline {section}{\numberline {10}DESCENT}{6}
+\contentsline {section}{\numberline {11}LANDING}{7}
+\contentsline {section}{\numberline {12}AFTER LANDING}{7}
+\contentsline {section}{\numberline {13}SHUTDOWN}{8}
+\contentsline {part}{\numberline {II}ABNORMAL CHECKLIST}{II}
+\contentsline {section}{\numberline {14}HIGH SPEED LANDING}{1}
+\contentsline {section}{\numberline {15}OVERWEIGHT LANDING}{1}
+\contentsline {part}{\numberline {III}EMERG CHECKLIST}{III}
+\contentsline {section}{\numberline {16}EMERG - ENGINE FIRE IN FLIGHT}{1}
+\contentsline {section}{\numberline {17}EMERG - ENGINE FIRE ON GROUND}{2}
+\contentsline {section}{\numberline {18}EMERG - ENGINE FAIL IN FLIGHT}{3}
