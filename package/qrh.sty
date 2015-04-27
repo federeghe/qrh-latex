@@ -35,11 +35,10 @@
 % Command to create the main TOC
 %
 
-\renewcommand{\cftpartfont}{\vspace*{15pt}\Huge \bfseries}
+\renewcommand{\cftpartfont}{\vspace*{15pt}\huge \bfseries}
 
 \newcommand{\QRHtoc} {
-    \vspace*{15pt}
-	\shorttableofcontents{Table of Content}{0}
+	\shorttableofcontents{Sections:}{1}
 %    \makeatletter
 %      \newwrite\tf@toc
 %      \immediate\openout\tf@toc\jobname.toc\relax
@@ -130,6 +129,14 @@
  
   \end{center}
 
+}
+
+\newcommand{\QRHblank} {
+    \vspace*{\fill}
+    \begin{center}
+        \Large- Intentionally left blank -
+    \end{center}
+    \vspace*{\fill}
 }
 
 % SINGLE ITEM

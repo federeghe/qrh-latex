@@ -14,6 +14,10 @@
 \QRHsymalert
 \newpage
 
+\QRHblank
+\QRHsymalert
+\newpage
+
 \QRHpart{NORMAL CHECKLIST}
 
 \QRHheading
@@ -292,6 +296,31 @@
 \QRHsymalert
 \newpage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\QRHheading
+
+\QRHbody{LANDING GEAR UNSAFE - FAILURE TO RETRACT} {
+  \QRHitem{HYDRAULIC PRESSURE}{CHECK}
+  \QRHitem{LDG GEAR HANDLE}{DOWN then UP}
+  \QRHitemcond{if landing gear still fails to retract}{
+    \QRHsubitem{AUTOBRAKE}{OFF (DO NOT USE)}
+    \QRHsubitem{LDG GEAR HANDLE}{KEEP DOWN}
+  }
+}
+
+\QRHbody{LANDING GEAR UNSAFE - FAILURE TO EXTEND} {
+  \QRHitem{LDG GEAR HANDLE}{CHECK DOWN}
+  \QRHitem{HYDRAULIC PRESSURE}{CHECK}
+  \QRHitem{LDG GEAR HANDLE}{UP then DOWN}
+  \QRHitemcond{if landing gear still fails to extend}{
+    \QRHsubitem{LDG GEAR HANDLE}{KEEP DOWN}
+    \QRHsubitem{EMERG LDG GEAR HANDLE}{PULL}
+  }
+}
+
+\QRHsymalert
+\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -413,5 +442,48 @@ times with interval pauses of 30 s.} {
 
 \QRHsymalert
 \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\QRHheading
+
+\QRHbody{EMERG - EVACUATION} {
+  \QRHitem{AIRPLANE}{STOP}
+  \QRHitem{PARK BRAKE}{ON}
+  \QRHitem{FUEL VALVE 1 \& 2}{OFF}
+  \QRHitemcond{If any fire suspected}
+  {
+      \QRHsubitem{ENG FIRE BUTTON 1 \& 2}{ON}
+  }
+  \QRHitem{BATTERY}{OFF}
+  \QRHitem{PASSENGER/CREW}{EVACUATE}
+}
+
+\QRHbody{EMERG - BOMB ON BOARD} {
+  \QRHitem{ATC}{NOTIFIED}
+  \QRHitem{DESCENT}{BELOW FL100}
+  \QRHitemcond{Below FL100}
+  {
+      \QRHsubitem{AIRCRAFT}{DEPRESSURIZED}
+  }
+  \QRHitem{FOREIGN OBJECTS}{SEARCH}
+
+  \QRHitemcond{If a device is found}
+  {
+    \QRHsubitem{PASSANGERS}{LEAD AWAY FORM BOMB}
+    \QRHsubitem{OBJECT: MOVE GENTLY AND MAINTAIN ATTITUDE}{IMMOBILIZED}
+    \QRHsubitem{OBJECT: COVER WITH PLASTIC MATERIAL}{DONE}
+    \QRHsubitem{OBJECT: COVER WITH WET MATERIAL}{DONE}
+  }
+  \QRHitemcond{If any fire suspected}
+  {
+      \QRHsubitem{ENG FIRE BUTTON 1 \& 2}{ON}
+  }
+  \QRHitem{BATTERY}{OFF}
+  \QRHitem{PASSENGER/CREW}{EVACUATE}
+}
+
+\QRHsymalert
+\newpage
+
 
 \end{document}

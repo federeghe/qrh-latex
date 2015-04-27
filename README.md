@@ -20,6 +20,7 @@ contain the next commands.
   * `\QRHsubitem`: like \itemcl. Currently is not possible to have `\itemcond` nested.
 * `\QRHpart`: creates a new set of checklists. One parameter: part name like "NORM CHECKLIST".
 * `\QRHspace`: a space between two items.
+* `\QRHblank`: it prints at center of a page 'intentionally left blank'. Note: you need to put `\newpage` in any case.
 
 Also there is `\QRHsymalert` that insert a banner in the bottom of the page to alert do not use this checklist for real aviation. You have to put `\QRHsymalert` just before`\newpage`.
 
