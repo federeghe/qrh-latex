@@ -1,0 +1,23 @@
+\contentsline {part}{NORMAL CHECKLIST}{I}
+\contentsline {section}{COLD AND DARK}{1.1}
+\contentsline {section}{ENGINE STARTUP}{1.2}
+\contentsline {section}{PRE-TAXI}{1.3}
+\contentsline {section}{TAXI}{1.3}
+\contentsline {section}{PRE-TAKEOFF}{1.4}
+\contentsline {section}{AFTER-TAKEOFF}{1.4}
+\contentsline {section}{CLIMB}{1.5}
+\contentsline {section}{CRUISE}{1.5}
+\contentsline {section}{FLIGHT LEVEL CHANGE}{1.5}
+\contentsline {section}{DESCENT}{1.6}
+\contentsline {section}{LANDING}{1.7}
+\contentsline {section}{AFTER LANDING}{1.7}
+\contentsline {section}{SHUTDOWN}{1.8}
+\contentsline {part}{ABNORMAL CHECKLIST}{II}
+\contentsline {section}{HIGH SPEED LANDING}{2.1}
+\contentsline {section}{OVERWEIGHT LANDING}{2.1}
+\contentsline {section}{LANDING GEAR UNSAFE - FAILURE TO RETRACT}{2.2}
+\contentsline {section}{LANDING GEAR UNSAFE - FAILURE TO EXTEND}{2.2}
+\contentsline {part}{EMERG CHECKLIST}{III}
+\contentsline {section}{EMERG - ENGINE FIRE IN FLIGHT}{3.1}
+\contentsline {section}{EMERG - ENGINE FIRE ON GROUND}{3.2}
+\contentsline {section}{EMERG - ENGINE FAIL IN FLIGHT}{3.3}
