@@ -28,7 +28,7 @@ MKTEXLSR = mktexlsr
 
 STYFILES = qrh.sty qrhhelper.sty
 
-LATEXCOMPILER = pdflatex
+LATEXCOMPILER = pdflatex -halt-on-error
 
 all: stycheck
 	$(MKDIR) -p build
@@ -51,8 +51,15 @@ test:	testp180
 
 archpackage:
 	echo "Not yet implemented".
-	
+
+compile =									\
+	$(LATEXCOMPILER) $(1) > compilation.log;				\
+	if (($$?)); then							\
+	  cat compilation.log;							\
+	  false;								\
+	fi									\
 
 testp180:
 	cd ../examples/p180 && \
-	$(LATEXCOMPILER) p180.tex > compilation.log
+	$(call compile,p180.tex)
+	@echo -e "\n*** P180 compiled."

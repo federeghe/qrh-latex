@@ -22,7 +22,7 @@
 \RequirePackage{changepage}   % adjustwidth
 \RequirePackage{graphicx}     % for includegraphics
 \RequirePackage{qrhhelper}
-
+\RequirePackage{tocloft}      % for toc customization
 
 % FONT FAMILY SELECTION
 \RequirePackage[T1]{fontenc}
@@ -34,8 +34,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Command to create the main TOC
 %
+
+\renewcommand{\cftpartfont}{\vspace*{15pt}\Huge \bfseries}
+
 \newcommand{\QRHtoc} {
-	\shorttableofcontents{Summary}{0}
+    \vspace*{15pt}
+	\shorttableofcontents{Table of Content}{0}
 %    \makeatletter
 %      \newwrite\tf@toc
 %      \immediate\openout\tf@toc\jobname.toc\relax
@@ -88,10 +92,10 @@
             \begin{tabular}{@{} |p{1.3cm}|p{6.5cm}|p{1.7cm}|p{1.5cm}| @{}}
               \hline
               
-              \multicolumn{1}{|c|}{\multirow{2}{*}{\large \QRHAirplaneShortName}} & 
+              \multicolumn{1}{|c}{\multirow{2}{*}{\large \QRHAirplaneShortName}} & 
               \multicolumn{1}{|c|}{\multirow{2}{*}{\LARGE \PartName@QRH}} & 
               REV. \QRHRevisionNumber &
-              \multicolumn{1}{|c|}{\multirow{2}{*}{\LARGE \arabic{PartCount@QRH}.\ifnum\thepage<10 0\fi\thepage}}
+              \multicolumn{1}{c|}{\multirow{2}{*}{\LARGE \arabic{PartCount@QRH}.\ifnum\thepage<10 0\fi\thepage}}
               \\
               & & \footnotesize\mmddyyyydate\today & \\
               
