@@ -4,8 +4,18 @@ Quick Reference Handbook package for LaTeX.
 Quick Reference Handbooks or QRHs are specific manuals used by pilots. A QRH contains all normal and abnormal procedures for flying a specific
 aircraft. A more detailed definition can be found [at skybrary](http://www.skybrary.aero/index.php/Quick_Reference_Handbook).
 
-Exposed commands
-----------------
+How to build package
+--------------------
+sty files are already built. However, you can exec `make` and `make install` under package directory to install to your system the package. *Do not use qty-helper package*, it's an include file for main package `qty`.
+
+You should check and edit Makefile to set the correct values for compilers and destination directory.
+
+How to build your checklist
+---------------------------
+After write your checklist, you need to create the `.toc` file before build it. Currently LaTeX implementation doesn't create the `.toc` file, so you need to execute the tool presents under tools directory (python >= 3.1 required).
+
+Exposed commands reference
+--------------------------
 
 You should separate each page with `\newpage` and set as first the `\QRHheading` (explained below). You should not split the checklist in more pages.
 
