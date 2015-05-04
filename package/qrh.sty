@@ -37,12 +37,26 @@
 \RequirePackage{graphicx}     % for includegraphics
 \RequirePackage{qrhhelper}
 \RequirePackage{tocloft}      % for toc customization
+\RequirePackage{mdframed}	  % for siderules
 
 % FONT FAMILY SELECTION
 \RequirePackage[T1]{fontenc}
 \RequirePackage[ttdefault=true]{AnonymousPro}
 \renewcommand*\familydefault{\ttdefault}
 \ttfamily
+
+% SIDERULES DEFINITION (condition item)
+\newmdenv[
+  topline=false,
+  bottomline=false,
+  rightline=false,
+%  skipabove=\topsep,
+%  skipbelow=\topsep,
+  leftmargin=5pt,
+  rightmargin=-10pt,
+  innertopmargin=0pt,
+  innerbottommargin=0pt
+]{siderules}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -159,14 +173,18 @@
 }
 
 \newcommand{\QRHsubitem}[2] {
-~~\QRHitem{#1}{#2}
+    \PackageWarning {qrh} {Obsolete command, use QRHitem instead.}
+    \QRHitem{#1}{#2}
 }
 
 \newcommand{\QRHitemcond}[2] {
-\vspace*{0.02cm}
-\textbf{#1}: \\
-#2 
-\vspace*{0.05cm}
+  \vspace*{0.02cm}
+  \textbf{#1}:
+  \begin{siderules}
+    \vspace*{0.4cm}
+    #2 
+  \end{siderules}
+%  \vspace*{0.05cm}
 }
 
 \newcommand{\QRHspace} {
