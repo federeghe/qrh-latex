@@ -30,6 +30,7 @@
 \usepackage{graphicx}
 \usepackage{qrh}
 
+
 \begin{document}
 
 \QRHfirstpage{p180.png}{P180 Avanti II}{P180 II}{03}
@@ -451,18 +452,16 @@ times with interval pauses of 30 s.} {
     \QRHsubitem{IGNITION}{OFF then START (hold 15 s.)}
   }
   
-  \QRHitemcond{If no relight}
-  {
-    \QRHsubitem{FUEL VALVE \& IGNITION \& IGNITER}{OFF (affected eng)}
-    \QRHsubitem{PROP SYNC}{OFF}
-    \QRHsubitem{LAND ASAP}{LAND ASAP}
 
-  }
-  \QRHitemcond{If relight}
-  {
+  
+  \QRHcondOR{If relight}{
     \QRHsubitem{CONDITION LEVER}{ADJUST WITH CARE}
   	\QRHsubitem{THROTTLE}{ADJUST WITH CARE}
     \QRHsubitem{BLEED AIR}{BOTH}
+  }{If NOT relight}{
+    \QRHsubitem{FUEL VALVE \& IGNITION \& IGNITER}{OFF (affected eng)}
+    \QRHsubitem{PROP SYNC}{OFF}
+    \QRHsubitem{LAND ASAP}{LAND ASAP}
   }
   
 }

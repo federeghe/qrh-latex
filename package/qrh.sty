@@ -38,6 +38,11 @@
 \RequirePackage{qrhhelper}
 \RequirePackage{tocloft}      % for toc customization
 \RequirePackage{mdframed}	  % for siderules
+\RequirePackage{scrextend}
+\RequirePackage{stackengine}
+\RequirePackage{tabto}
+\RequirePackage{tikz}
+\usetikzlibrary{tikzmark}
 
 % FONT FAMILY SELECTION
 \RequirePackage[T1]{fontenc}
@@ -169,12 +174,11 @@
 
 % SINGLE ITEM
 \newcommand{\QRHitem}[2] {
-#1 \dotfill ~#2 \\
+    #1 \dotfill ~#2 \\
 }
 
 \newcommand{\QRHsubitem}[2] {
-    \PackageWarning {qrh} {Obsolete command, use QRHitem instead.}
-    \QRHitem{#1}{#2}
+    #1 \dotfill ~#2 \par
 }
 
 \newcommand{\QRHitemcond}[2] {
@@ -186,6 +190,51 @@
   \end{siderules}
 %  \vspace*{0.05cm}
 }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlength\tmplen
+\setstackEOL{\cr}
+\newcommand\connect@QRH[2]{%
+  \setstackgap{S}{0pt}%
+  \tabto*{0in}%
+  \setlength\tmplen{\dimexpr#2\baselineskip-\baselineskip}%
+  \setlength\tmplen{.5\tmplen}%
+  \smash{\raisebox{2.5pt}{\makebox[0pt][r]{%
+    \Shortunderstack[l]{%
+      \smash{\raisebox{-2.7pt}{\rarrow}}\cr
+      \protect\rule{.5pt}{\tmplen}\cr
+      \makebox[0pt]{#1\strut}\cr
+      \protect\rule{.5pt}{\tmplen}%
+      \smash{\raisebox{-2.4pt}{\rarrow}}\cr
+    }%
+  }}}%
+  \tabto{\TabPrevPos}%
+}
+\def\rarrow{$\kern-.7pt{-}\kern-2pt{-}\kern-2pt{\rightarrow}$}
+
+\newcommand{\QRHcondOR}[4] {
+    \begin{addmargin}[1cm]{0em}
+        \noindent\connect@QRH{OR}{4}\textbf{#1}\par
+            #2
+        \noindent\textbf{#3}\par
+            #4
+    \end{addmargin}
+}
+
+%\newcommand{\QRHcondOR}[4] {
+%    \begin{description}[labelindent=0.6cm]
+%    \item[\tikzmark{a}#1:] #2
+%    \item[\tikzmark{b}#3:] #4
+%    \end{description}
+%    \tikz[remember picture,<->] \draw[overlay] ([yshift=1ex]pic cs:a) --++(-0.5,0)  |- ([yshift=1ex]pic cs:b) node[at start, pos=0.25, fill=white]{OR};
+%
+%    \tikz[remember picture,<->] \draw[overlay] ([yshift=0.1cm]pic cs:a) --++(-0.6,0)  |- ([yshift=0.1cm]pic cs:b) node[midway, pos=0.25, fill=white]{OR};
+%}
+
+
 
 \newcommand{\QRHspace} {
 \vspace*{0.05cm}
